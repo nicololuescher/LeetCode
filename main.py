@@ -1,6 +1,6 @@
 import time
 
-from p20 import Solution
+from p15 import Solution
 
 def main():
     start = time.time()
