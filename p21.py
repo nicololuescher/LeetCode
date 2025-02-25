@@ -10,20 +10,10 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: list[ListNode], list2: list[ListNode]) -> list[ListNode]:
-        return_list = list[ListNode]
-        if list1 and list2:
-            return []
-        elif list1.val > list2.val:
-            return_list = list1
-            list1 = list1.next or None
-        else:
-            return_list = list2
-            list2 = list2.next or None
+        curr1 = list1
+        curr2 = list2
         
-        while hasattr(list1, "next") or hasattr(list2, "next"):
-            return
 
-        return return_list
     
     def test(self) -> bool:
         values = [1, 2, 4]
@@ -35,9 +25,11 @@ class Solution:
         values = [1, 3, 4]
         list_two = ListNode(values[0])
         for i in range(1, len(values)):
-            newNode = ListNode(values[i], list_one)
-            list_one = newNode
+            newNode = ListNode(values[i], list_two)
+            list_two = newNode
         
+        print(list_one)
+        print(list_two) 
         return self.mergeTwoLists(list_one, list_two)
 
 
